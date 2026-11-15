@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Order & Project Details - Manage contract milestones, deliverables, and escrow on WorkSphere.">
+  <title>Project Details & Milestones | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar role-workspace-navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="orders.html" class="nav-link active">My Orders</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Perspective Switcher -->
+        <div class="role-perspective-switcher">
+          <span class="perspective-label">View as:</span>
+          <button type="button" class="btn btn-sm perspective-btn active" id="detailViewFreelancerBtn" data-role="freelancer">
+            Freelancer View
+          </button>
+          <button type="button" class="btn btn-sm perspective-btn" id="detailViewClientBtn" data-role="client">
+            Client View
+          </button>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Header Section -->
+  <main class="details-page-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="orders.html">Orders</a>
+        <span>/</span>
+        <span class="current" id="orderBreadcrumb">Order #ORD-101</span>
+      </div>
+
+      <!-- Project Header Card -->
+      <div class="order-header-card">
+        <div class="order-header-top">
+          <div>
+            <div style="display:flex; align-items:center; gap:0.65rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+              <span class="order-id-badge" id="orderIdBadge">#ORD-101</span>
+              <span class="badge badge-primary" id="orderCategoryTag">Web Development</span>
+              <span class="badge" id="orderStatusBadge">In Progress</span>
+            </div>
+            <h1 class="order-main-title" id="orderTitleDisplay">Project Title Loading...</h1>
+          </div>
+
+          <div class="order-budget-box">
+            <span class="b-label">Total Contract Budget</span>
+            <strong class="b-val" id="orderBudgetDisplay">$2,800</strong>
+            <span class="b-sub">🔒 100% Escrow Funded</span>
+          </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="order-progress-section">
+          <div class="progress-labels-row">
+            <span>Overall Milestone Progress</span>
+            <strong id="progressPercentLabel">65% Completed</strong>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progressBarFill" style="width: 65%;"></div>
+          </div>
+          <div class="progress-footer-row">
+            <span id="orderDatesDisplay">Started Nov 08, 2026 • Deadline: Nov 28, 2026</span>
+            <span id="orderCountdownDisplay" style="color: var(--primary); font-weight: 700;">⏱️ 14 Days Remaining</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed Review Banner (Week 6 Integration) -->
+      <div id="completedReviewBanner" style="display:none; background:#ecfdf5; border:1.5px solid #a7f3d0; border-radius:var(--radius-lg); padding:1.25rem 1.75rem; margin-top:1.5rem; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h4 style="color:#065f46; font-size:1.1rem; font-weight:800; margin-bottom:0.25rem;">🎉 Project Completed & Escrow Released!</h4>
+          <p style="color:#047857; font-size:0.9rem;">Share your experience to help the marketplace and celebrate successful collaboration.</p>
+        </div>
+        <a href="reviews.html" id="leaveReviewBannerBtn" class="btn btn-sm btn-primary">⭐ Rate Your Experience / Leave a Review</a>
+      </div>
+
+      <!-- Main Layout Grid -->
+      <div class="details-layout-grid" style="margin-top: 2rem;">
+
+        <!-- Left Column: Milestones & Submissions -->
+        <div class="details-main-content">
+
+          <!-- Milestones & Tasks Section -->
+          <div class="details-card-block">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.25rem; flex-wrap:wrap; gap:0.5rem;">
+              <div>
+                <h3 style="margin-bottom:0.25rem;">Milestones & Tasks</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted);">
+                  Click any milestone checkbox to update task completion status.
+                </p>
+              </div>
+              <span class="badge badge-success" id="milestonesCompletedCount">1 of 3 Completed</span>
+            </div>
+
+            <div class="milestones-checklist" id="milestonesListContainer">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Deliveries & Submissions Section -->
+          <div class="details-card-block" id="submissionsCardBlock">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.25rem; flex-wrap:wrap; gap:0.5rem;">
+              <div>
+                <h3 style="margin-bottom:0.25rem;">Deliverables & Work Submissions</h3>
+                <p style="font-size:0.85rem; color:var(--text-muted);">
+                  Files and deliverables submitted for client inspection and milestone approval.
+                </p>
+              </div>
+            </div>
+
+            <!-- Existing Submissions List -->
+            <div class="submissions-history-list" id="submissionsListContainer">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <!-- Freelancer Submit Work Form (Shown in Freelancer View) -->
+            <div class="delivery-action-box" id="freelancerDeliveryBox" style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 0.5rem;">
+                🚀 Submit New Project Deliverable
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Upload your latest build or provide a link for the client to review before releasing escrow funds.
+              </p>
+
+              <form id="submissionForm">
+                <div class="form-group">
+                  <label for="subMessage">Submission Note / Changelog <span class="req">*</span></label>
+                  <textarea id="subMessage" class="form-control" rows="3" required placeholder="Describe what has been completed, key updates, and instructions for client testing..."></textarea>
+                </div>
+
+                <div class="form-grid-2col">
+                  <div class="form-group">
+                    <label for="subFileName">Deliverable File / Archive Name <span class="req">*</span></label>
+                    <input type="text" id="subFileName" class="form-control" required placeholder="e.g. worksphere-saas-v2.zip">
+                  </div>
+                  <div class="form-group">
+                    <label for="subFileSize">Estimated File Size</label>
+                    <input type="text" id="subFileSize" class="form-control" placeholder="e.g. 24.5 MB">
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="btnSubmitWork">
+                  Submit Deliverable for Client Inspection
+                </button>
+              </form>
+            </div>
+
+            <!-- Client Review & Escrow Release Box (Shown in Client View) -->
+            <div class="delivery-action-box" id="clientApprovalBox" style="display:none; margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 0.5rem;">
+                🛡️ Client Milestone Review & Approval
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+                Review submitted deliverables. If satisfactory, approve work to release secured milestone funds from escrow.
+              </p>
+
+              <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                <button type="button" class="btn btn-primary" id="btnApproveAndRelease">
+                  ✓ Approve Deliverable & Release Escrow
+                </button>
+                <button type="button" class="btn btn-secondary" id="btnRequestRevisions">
+                  🔄 Request Minor Revisions
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right Column: Counterpart & Contract Sidebar -->
+        <aside class="details-sidebar">
+          <div class="pricing-card-sticky">
+
+            <!-- Active View Banner -->
+            <div class="active-view-tag" id="currentViewTag">
+              <span>Freelancer View Active</span>
+            </div>
+
+            <!-- Counterpart Party Box -->
+            <div class="counterpart-card-block">
+              <span class="c-role-tag" id="counterpartRoleTag">Client Details</span>
+              <div class="counterpart-info-row">
+                <img id="counterpartAvatar" src="" alt="Counterpart avatar" class="counterpart-avatar-img">
+                <div>
+                  <h4 class="counterpart-name" id="counterpartName">Apex Global Tech</h4>
+                  <span class="counterpart-sub" id="counterpartSub">San Francisco, USA</span>
+                </div>
+              </div>
+              <button type="button" class="btn btn-outline btn-block btn-sm" id="btnChatWithCounterpart" style="margin-top: 1rem;">
+                💬 Message Party
+              </button>
+            </div>
+
+            <!-- Contract Terms Summary -->
+            <div class="contract-terms-summary" style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.25rem;">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 1rem;">
+                Contract Specifications
+              </h4>
+
+              <div class="term-row">
+                <span class="term-label">Contract Status</span>
+                <span class="badge" id="sidebarStatusBadge">In Progress</span>
+              </div>
+              <div class="term-row">
+                <span class="term-label">Escrow Deposit</span>
+                <strong id="sidebarEscrowDeposit">$2,800.00</strong>
+              </div>
+              <div class="term-row">
+                <span class="term-label">Payment Release</span>
+                <span style="color: var(--secondary); font-weight:600;">On Milestone Approval</span>
+              </div>
+              <div class="term-row">
+                <span class="term-label">Resolution Support</span>
+                <span style="color: var(--primary); font-weight:600;">24/7 WorkSphere Escrow</span>
+              </div>
+            </div>
+
+            <div class="guarantee-note" style="margin-top: 1.5rem;">
+              <span>🔒 Protected Contract Guarantee</span>
+              <p>Escrow protects both freelancer effort and client funds until mutual delivery sign-off.</p>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="marketplace.html">Marketplace</a>
+          <a href="orders.html">Orders</a>
+          <a href="profile.html">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/order-details.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create and publish a new freelance service or gig on WorkSphere Marketplace.">
+  <title>Create a New Service | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="marketplace.html?tab=services" class="nav-link">Find Jobs & Services</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="messages.html" class="nav-link">Messages</a></li>
+          <li><a href="notifications.html" class="nav-link">Notifications</a></li>
+          <li><a href="profile.html" class="nav-link">My Profile</a></li>
+          <li><a href="profile.html?tab=services" class="nav-link">My Services</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="dashboard.html" class="btn btn-secondary btn-sm">Dashboard</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Create Service Form Section -->
+  <main class="dashboard-body-section">
+    <div class="container" style="max-width: 900px;">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="profile.html">Dashboard</a>
+        <span>/</span>
+        <span class="current">Create a Service</span>
+      </div>
+
+      <div class="form-container-card">
+        <div class="form-header-bar">
+          <div>
+            <h1 style="font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.35rem;">
+              Create a New Service / Gig
+            </h1>
+            <p class="form-subtitle">
+              Publish a clear, packaged freelance service to attract clients with upfront pricing and deliverables.
+            </p>
+          </div>
+          <a href="profile.html?tab=services" class="btn btn-secondary btn-sm">Back to My Services</a>
+        </div>
+
+        <form id="createServiceForm" novalidate>
+
+          <!-- Service Title -->
+          <div class="form-group">
+            <label for="serviceTitle">Service Gig Title <span class="req">*</span></label>
+            <input type="text" id="serviceTitle" class="form-control" required placeholder="e.g. Modern High-Converting Responsive SaaS Web Application" maxlength="120">
+            <div class="field-feedback" id="titleFeedback"></div>
+            <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+              Write a concise, professional title (minimum 10 characters).
+            </small>
+          </div>
+
+          <!-- Category & Delivery Time -->
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="serviceCategory">Category <span class="req">*</span></label>
+              <select id="serviceCategory" class="form-control" required>
+                <option value="">Select a category...</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Mobile App Development">Mobile App Development</option>
+                <option value="Data Analysis">Data Analysis</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="AI & Machine Learning">AI & Machine Learning</option>
+                <option value="Writing & Translation">Writing & Translation</option>
+                <option value="Video & Animation">Video & Animation</option>
+              </select>
+              <div class="field-feedback" id="categoryFeedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceDelivery">Estimated Delivery Time (Days) <span class="req">*</span></label>
+              <input type="number" id="serviceDelivery" class="form-control" min="1" max="60" required placeholder="e.g. 5">
+              <div class="field-feedback" id="deliveryFeedback"></div>
+            </div>
+          </div>
+
+          <!-- Pricing & Revisions -->
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="servicePrice">Starting Package Price (USD $) <span class="req">*</span></label>
+              <input type="number" id="servicePrice" class="form-control" min="15" step="5" required placeholder="e.g. 350">
+              <div class="field-feedback" id="priceFeedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceTags">Skills & Tags (Comma-separated) <span class="req">*</span></label>
+              <input type="text" id="serviceTags" class="form-control" required placeholder="e.g. React, Next.js, Node.js, Tailwind">
+              <div class="field-feedback" id="tagsFeedback"></div>
+            </div>
+          </div>
+
+          <!-- Cover Image URL & Presets -->
+          <div class="form-group">
+            <label for="serviceImage">Service Cover Image URL <span class="req">*</span></label>
+            <input type="url" id="serviceImage" class="form-control" required placeholder="https://images.unsplash.com/...">
+            <div class="field-feedback" id="imageFeedback"></div>
+
+            <!-- Quick Preset Image Buttons -->
+            <div style="margin-top: 0.6rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Or choose a high-res preset:</span>
+              <button type="button" class="btn btn-sm btn-ghost preset-img-btn" data-url="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80">💻 Web Dev</button>
+              <button type="button" class="btn btn-sm btn-ghost preset-img-btn" data-url="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=600&q=80">🎨 UI/UX</button>
+              <button type="button" class="btn btn-sm btn-ghost preset-img-btn" data-url="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80">📱 Mobile App</button>
+              <button type="button" class="btn btn-sm btn-ghost preset-img-btn" data-url="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80">📊 Data</button>
+              <button type="button" class="btn btn-sm btn-ghost preset-img-btn" data-url="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80">🤖 AI</button>
+            </div>
+
+            <!-- Live Image Preview Box -->
+            <div id="imagePreviewContainer" class="service-image-preview-box" style="display: none; margin-top: 1rem;">
+              <img id="liveImagePreview" src="" alt="Service preview" style="width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-md);">
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label for="serviceDesc">Service Description & Scope <span class="req">*</span></label>
+            <textarea id="serviceDesc" class="form-control" rows="6" required placeholder="Describe exactly what client gets, your methodology, technologies used, and requirements..."></textarea>
+            <div class="field-feedback" id="descFeedback"></div>
+            <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+              Minimum 30 characters explaining the scope of your work.
+            </small>
+          </div>
+
+          <!-- Deliverables / Inclusions -->
+          <div class="form-group">
+            <label for="serviceFeatures">Key Deliverables (One per line) <span class="req">*</span></label>
+            <textarea id="serviceFeatures" class="form-control" rows="4" placeholder="Full responsive design across Desktop & Mobile&#10;Clean source code with documentation&#10;API & Database integration&#10;7 days complimentary post-launch support"></textarea>
+            <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+              Add clear bullet points so clients know exactly what is included.
+            </small>
+          </div>
+
+          <!-- Submit Buttons -->
+          <div class="form-actions-row">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitServiceBtn">
+              🚀 Publish Service to Marketplace
+            </button>
+            <a href="profile.html?tab=services" class="btn btn-secondary btn-lg">
+              Cancel
+            </a>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="marketplace.html">Marketplace</a>
+          <a href="profile.html">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/create-service.js"></script>
+</body>
+</html>
+

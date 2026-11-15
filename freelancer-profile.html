@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freelancer Profile - WorkSphere Freelance Marketplace">
+  <title>Freelancer Profile | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path><circle cx="8" cy="12" r="2"></circle></svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link active">Find Freelancers</a></li>
+          <li><a href="marketplace.html?tab=services" class="nav-link">Find Jobs & Services</a></li>
+          <li><a href="profile.html" class="nav-link">My Profile</a></li>
+          <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-open-login" type="button">Log In</button>
+        <button class="btn btn-primary btn-open-register" type="button">Join WorkSphere</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Freelancer Profile View -->
+  <main class="details-page-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="marketplace.html?tab=freelancers">Freelancers</a>
+        <span>/</span>
+        <span class="current" id="flBreadcrumb">Profile</span>
+      </div>
+
+      <div class="details-layout-grid profile-layout-grid">
+        <!-- Sidebar Profile Card (Left Column) -->
+        <aside class="profile-sidebar-card">
+          <div class="profile-card-header">
+            <div class="profile-avatar-wrap">
+              <img id="flAvatar" src="" alt="Freelancer profile picture" class="profile-avatar-img">
+              <span class="fl-online-indicator" title="Online Now"></span>
+            </div>
+            <h1 class="profile-name" id="flName">Freelancer Name</h1>
+            <p class="profile-title" id="flTitle">Senior Developer & Specialist</p>
+            <div id="flBadgeWrap">
+              <span class="badge badge-primary" id="flBadge">Top Rated</span>
+            </div>
+          </div>
+
+          <div class="profile-quick-stats">
+            <div class="q-stat">
+              <span class="q-label">Hourly Rate</span>
+              <strong class="q-val" id="flHourlyRate">$65 / hr</strong>
+            </div>
+            <div class="q-stat">
+              <span class="q-label">Jobs Completed</span>
+              <strong class="q-val" id="flCompletedJobs">94</strong>
+            </div>
+            <div class="q-stat">
+              <span class="q-label">Rating</span>
+              <strong class="q-val" id="flRating">★ 4.95</strong>
+            </div>
+          </div>
+
+          <div class="profile-action-btns">
+            <button class="btn btn-primary btn-block" id="flHireBtn" type="button">
+              Hire This Specialist
+            </button>
+            <button class="btn btn-outline btn-block" id="flMessageBtn" type="button" style="margin-top: 0.75rem;">
+              Send Message
+            </button>
+          </div>
+
+          <div class="profile-meta-details">
+            <div class="meta-row">
+              <span class="meta-icon">📍</span>
+              <div>
+                <span class="meta-label">Location</span>
+                <span class="meta-value" id="flLocation">San Francisco, USA</span>
+              </div>
+            </div>
+            <div class="meta-row">
+              <span class="meta-icon">⏱️</span>
+              <div>
+                <span class="meta-label">Avg. Response Time</span>
+                <span class="meta-value" id="flResponseTime">&lt; 1 hour</span>
+              </div>
+            </div>
+            <div class="meta-row">
+              <span class="meta-icon">🌐</span>
+              <div>
+                <span class="meta-label">Languages</span>
+                <span class="meta-value" id="flLanguages">English, Spanish</span>
+              </div>
+            </div>
+            <div class="meta-row">
+              <span class="meta-icon">📅</span>
+              <div>
+                <span class="meta-label">Member Since</span>
+                <span class="meta-value" id="flMemberSince">2021</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Body (Right Column) -->
+        <div class="profile-main-content">
+          <!-- Bio Card -->
+          <div class="details-card-block">
+            <h3>Professional Overview</h3>
+            <p id="flBioText" class="details-description-text">
+              Freelancer bio overview text...
+            </p>
+          </div>
+
+          <!-- Skills Card -->
+          <div class="details-card-block">
+            <h3>Specialized Skills & Competencies</h3>
+            <div class="fl-skills" id="flSkillsList" style="justify-content: flex-start;">
+              <!-- Skills tags -->
+            </div>
+          </div>
+
+          <!-- Services / Gigs by this Freelancer -->
+          <div class="details-card-block">
+            <h3>Services Offered by This Specialist</h3>
+            <div class="profile-services-grid" id="flServicesGrid">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Client Reviews -->
+          <div class="details-card-block">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+              <h3>Client Reviews & Feedback</h3>
+              <span class="badge badge-success" id="flReviewScore">4.95 Rating</span>
+            </div>
+
+            <div class="reviews-list" id="flReviewsList">
+              <!-- Sample Reviews -->
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <div class="reviewer-avatar-placeholder">TC</div>
+                    <div>
+                      <strong class="reviewer-name">TechCorp Innovations</strong>
+                      <span class="review-date">October 2026</span>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-body">
+                  "Phenomenal delivery! Communication was crystal clear from day one, and the final deliverable exceeded all our performance and aesthetic expectations."
+                </p>
+              </div>
+
+              <div class="review-item">
+                <div class="review-header">
+                  <div class="reviewer-info">
+                    <div class="reviewer-avatar-placeholder">NS</div>
+                    <div>
+                      <strong class="reviewer-name">NextScale Studio</strong>
+                      <span class="review-date">September 2026</span>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+                <p class="review-body">
+                  "Completed the project 2 days ahead of schedule. Very professional, responsive, and receptive to slight tweaks. Will absolutely rehire!"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="marketplace.html">Marketplace</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/freelancer-profile.js"></script>
+</body>
+</html>
+

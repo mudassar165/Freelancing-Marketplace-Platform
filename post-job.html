@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Post a freelance job vacancy and hire expert talent on WorkSphere.">
+  <title>Post a Job Vacancy | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="jobs.html" class="btn btn-secondary btn-sm">Browse Jobs</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post a Job Section -->
+  <main class="dashboard-body-section">
+    <div class="container" style="max-width: 900px;">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="jobs.html">Find Jobs</a>
+        <span>/</span>
+        <span class="current">Post a Job</span>
+      </div>
+
+      <div class="form-container-card">
+        <div class="form-header-bar">
+          <div>
+            <h1 style="font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.35rem;">
+              Post a Job Vacancy
+            </h1>
+            <p class="form-subtitle">
+              Publish your project requirements to receive proposals from top verified freelancers worldwide.
+            </p>
+          </div>
+          <a href="jobs.html" class="btn btn-secondary btn-sm">Back to Jobs</a>
+        </div>
+
+        <form id="postJobForm" novalidate>
+          <!-- Job Title -->
+          <div class="form-group">
+            <label for="newJobTitle">Job Post Headline / Title <span class="req">*</span></label>
+            <input type="text" id="newJobTitle" class="form-control" required placeholder="e.g. Senior Full-Stack Engineer Needed for Real-Time SaaS Platform MVP" maxlength="120">
+            <div class="field-feedback" id="newJobTitleFeedback"></div>
+            <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+              Write a clear, descriptive title summarizing the main role or deliverable.
+            </small>
+          </div>
+
+          <!-- Category & Experience -->
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="newJobCategory">Category <span class="req">*</span></label>
+              <select id="newJobCategory" class="form-control" required>
+                <option value="">Select a category...</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Mobile App Development">Mobile App Development</option>
+                <option value="Data Analysis">Data Analysis</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="AI & Machine Learning">AI & Machine Learning</option>
+              </select>
+              <div class="field-feedback" id="newJobCatFeedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="newJobExp">Required Experience Level</label>
+              <select id="newJobExp" class="form-control">
+                <option value="Intermediate">Intermediate (3-5 Years)</option>
+                <option value="Expert">Expert / Senior (5+ Years)</option>
+                <option value="Entry Level">Entry Level (1-2 Years)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Budget & Project Type -->
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="newJobBudget">Estimated Budget (USD $) <span class="req">*</span></label>
+              <input type="number" id="newJobBudget" class="form-control" min="50" step="25" required placeholder="e.g. 2500">
+              <div class="field-feedback" id="newJobBudgetFeedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="newJobDuration">Estimated Duration</label>
+              <select id="newJobDuration" class="form-control">
+                <option value="1-2 Weeks">1-2 Weeks</option>
+                <option value="3-4 Weeks">3-4 Weeks</option>
+                <option value="1-3 Months">1-3 Months</option>
+                <option value="3+ Months">3+ Months Ongoing</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Required Skills -->
+          <div class="form-group">
+            <label for="newJobSkills">Required Skills & Technologies (Comma-separated) <span class="req">*</span></label>
+            <input type="text" id="newJobSkills" class="form-control" required placeholder="e.g. React, TypeScript, Next.js, PostgreSQL">
+            <div class="field-feedback" id="newJobSkillsFeedback"></div>
+          </div>
+
+          <!-- Full Job Description -->
+          <div class="form-group">
+            <label for="newJobDesc">Project Scope & Detailed Requirements <span class="req">*</span></label>
+            <textarea id="newJobDesc" class="form-control" rows="6" required placeholder="Detail the technical requirements, key deliverables, expectations, and any milestones for this project..."></textarea>
+            <div class="field-feedback" id="newJobDescFeedback"></div>
+            <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+              Minimum 40 characters explaining your project scope.
+            </small>
+          </div>
+
+          <!-- Client Organization Name -->
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="newJobClientName">Company or Client Name</label>
+              <input type="text" id="newJobClientName" class="form-control" placeholder="e.g. Apex Innovations Corp">
+            </div>
+
+            <div class="form-group">
+              <label for="newJobClientLocation">Location</label>
+              <input type="text" id="newJobClientLocation" class="form-control" placeholder="e.g. San Francisco, USA">
+            </div>
+          </div>
+
+          <!-- Submit Actions -->
+          <div class="form-actions-row">
+            <button type="submit" class="btn btn-primary btn-lg" id="btnPublishJob">
+              🚀 Publish Job Post to Board
+            </button>
+            <a href="jobs.html" class="btn btn-secondary btn-lg">
+              Cancel
+            </a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="jobs.html">Find Jobs</a>
+          <a href="my-proposals.html">My Proposals</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/post-job.js"></script>
+</body>
+</html>
+

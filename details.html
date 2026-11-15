@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Freelancer or service details on WorkSphere." />
+    <title>WorkSphere | Profile Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+          <div class="logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+              <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+              <circle cx="8" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <span>Work<span class="highlight">Sphere</span></span>
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="marketplace.html" class="nav-link active">Marketplace</a></li>
+            <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn btn-ghost btn-open-login" type="button">Log In</button>
+          <button class="btn btn-primary btn-open-register" type="button">Join WorkSphere</button>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-banner detail-banner">
+        <div class="container">
+          <a href="marketplace.html" class="back-link">← Back to Marketplace</a>
+          <span class="section-tag">Profile Details</span>
+          <h1>Freelancer or Service Details</h1>
+        </div>
+      </section>
+
+      <section class="container detail-page">
+        <div id="detailContent"></div>
+      </section>
+    </main>
+
+    <div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-card">
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal" type="button">✕</button>
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" id="tabLogin" type="button">Log In</button>
+          <button class="modal-tab-btn" id="tabRegister" type="button">Register</button>
+        </div>
+
+        <h3 id="modalTitle" style="font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.25rem;">Welcome back to WorkSphere</h3>
+
+        <form id="authForm">
+          <div class="role-selector" id="roleSelector" style="display: none;">
+            <div class="role-option active" data-role="client">💼 Client</div>
+            <div class="role-option" data-role="freelancer">💻 Freelancer</div>
+          </div>
+
+          <div class="form-group">
+            <label for="authEmail">Work or Personal Email</label>
+            <input type="email" id="authEmail" class="form-control" placeholder="name@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="authPassword">Password</label>
+            <input type="password" id="authPassword" class="form-control" placeholder="••••••••••••" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="authSubmitBtn" style="width: 100%; margin-top: 0.5rem;">Sign In</button>
+        </form>
+
+        <p id="authSubtext" style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 1.25rem;">
+          Don't have an account? <a href="#" id="switchRegister" style="color: var(--primary); font-weight:700;">Create one for free</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

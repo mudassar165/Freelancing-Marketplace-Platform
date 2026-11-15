@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore WorkSphere Marketplace - Find verified freelance talent, turnkey services, and hire experts across design, tech, and marketing.">
+  <title>Marketplace | Browse Freelancers & Services - WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =================================================================
+       Navigation Bar
+       ================================================================= -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link" id="navLinkFreelancers">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link" id="navLinkServices">Find Jobs</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="orders.html" class="nav-link">My Orders</a></li>
+          <li><a href="messages.html" class="nav-link">Messages</a></li>
+          <li><a href="notifications.html" class="nav-link">Notifications</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+          <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-open-login" type="button">Log In</button>
+        <button class="btn btn-primary btn-open-register" type="button">Join WorkSphere</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       Marketplace Header & Tab Controls
+       ================================================================= -->
+  <section class="marketplace-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Marketplace</span>
+      </div>
+
+      <div class="marketplace-title-row">
+        <div>
+          <h1 class="marketplace-heading">Explore Marketplace</h1>
+          <p class="marketplace-subheading">
+            Browse verified freelance specialists and pre-packaged services with transparent ratings and escrow protection.
+          </p>
+        </div>
+
+        <!-- Mode switcher tab (Services vs Freelancers) -->
+        <div class="market-view-tabs" role="tablist">
+          <button class="market-tab-btn active" id="tabServices" data-tab="services" type="button" role="tab" aria-selected="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            Services Catalog
+          </button>
+          <button class="market-tab-btn" id="tabFreelancers" data-tab="freelancers" type="button" role="tab" aria-selected="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            Freelancers Directory
+          </button>
+          <button class="market-tab-btn" id="tabJobs" data-tab="jobs" type="button" role="tab" aria-selected="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="14" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"></path></svg>
+            Jobs
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       Main Marketplace Content & Filter Toolbar
+       ================================================================= -->
+  <main class="marketplace-main-section">
+    <div class="container">
+
+      <!-- Filter & Search Toolbar -->
+      <div class="market-filter-bar">
+        <!-- Search Input -->
+        <div class="market-search-box">
+          <svg class="search-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="marketSearchInput" placeholder="Search by keywords, titles, or skills..." autocomplete="off">
+          <button type="button" id="clearSearchBtn" class="clear-search-btn" style="display: none;" title="Clear search">✕</button>
+        </div>
+
+        <div class="market-filters-group">
+          <!-- Category Filter -->
+          <div class="filter-select-wrap">
+            <label for="marketCategoryFilter" class="filter-label">Category:</label>
+            <select id="marketCategoryFilter" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Graphic Design">Graphic Design</option>
+              <option value="Mobile App Development">Mobile App Development</option>
+              <option value="Data Analysis">Data Analysis</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="AI & Machine Learning">AI & Machine Learning</option>
+              <option value="Writing & Translation">Writing & Translation</option>
+              <option value="Video & Animation">Video & Animation</option>
+            </select>
+          </div>
+
+          <!-- Price Filter -->
+          <div class="filter-select-wrap">
+            <label for="marketPriceFilter" class="filter-label">Budget:</label>
+            <select id="marketPriceFilter" class="filter-select">
+              <option value="all">Any Price</option>
+              <option value="0-200">Under $200</option>
+              <option value="200-350">$200 to $350</option>
+              <option value="350-500">$350 to $500</option>
+              <option value="500+">$500 and above</option>
+            </select>
+          </div>
+
+          <div class="filter-select-wrap">
+            <label for="marketRatingFilter" class="filter-label">Rating:</label>
+            <select id="marketRatingFilter" class="filter-select">
+              <option value="all">Any Rating</option>
+              <option value="4">4.0+ stars</option>
+              <option value="4.5">4.5+ stars</option>
+              <option value="4.8">4.8+ stars</option>
+            </select>
+          </div>
+
+          <div class="filter-select-wrap">
+            <label for="marketDeliveryFilter" class="filter-label">Delivery:</label>
+            <select id="marketDeliveryFilter" class="filter-select">
+              <option value="all">Any delivery</option>
+              <option value="1-3">1-3 days</option>
+              <option value="4-7">4-7 days</option>
+              <option value="8+">8+ days</option>
+            </select>
+          </div>
+
+          <div class="filter-select-wrap">
+            <label for="marketExperienceFilter" class="filter-label">Experience:</label>
+            <select id="marketExperienceFilter" class="filter-select">
+              <option value="all">Any level</option>
+              <option value="entry">Entry</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="senior">Senior / Expert</option>
+            </select>
+          </div>
+
+          <!-- Sorting Options -->
+          <div class="filter-select-wrap">
+            <label for="marketSortFilter" class="filter-label">Sort By:</label>
+            <select id="marketSortFilter" class="filter-select">
+              <option value="recommended">Featured / Recommended</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="reviews">Most Popular</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="marketplace-stats" aria-label="Marketplace statistics">
+        <div><strong id="marketStatServices">0</strong><span>Services</span></div>
+        <div><strong id="marketStatFreelancers">0</strong><span>Freelancers</span></div>
+        <div><strong id="marketStatJobs">0</strong><span>Open jobs</span></div>
+        <a href="dashboard.html#favorites">My Favorites <span id="favoriteCount">0</span></a>
+      </div>
+
+      <!-- Active Filters & Results Summary -->
+      <div class="market-meta-row">
+        <div class="results-count-label" id="resultsCountLabel">
+          Showing <strong>8</strong> results
+        </div>
+
+        <div class="active-filter-tags" id="activeFilterTags">
+          <!-- Dynamic active filter pills -->
+        </div>
+
+        <button class="btn btn-sm btn-ghost reset-filters-btn" id="resetFiltersBtn" type="button" style="display: none;">
+          Clear Filters ✕
+        </button>
+      </div>
+
+      <!-- Cards Grid Container -->
+      <div class="marketplace-grid" id="marketplaceCardsGrid">
+        <!-- Rendered dynamically by marketplace.js -->
+      </div>
+
+      <!-- Empty State Container -->
+      <div class="empty-state-card" id="emptyStateContainer" style="display: none;">
+        <div class="empty-icon">🔍</div>
+        <h3>No matches found</h3>
+        <p>We couldn't find any listings matching your search criteria. Try adjusting your filters or search terms.</p>
+        <button class="btn btn-primary" id="emptyResetBtn" type="button">Reset All Filters</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =================================================================
+       Footer
+       ================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="logo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path><circle cx="8" cy="12" r="2"></circle></svg>
+            </div>
+            <span>Work<span class="highlight">Sphere</span></span>
+          </a>
+          <p>
+            WorkSphere connects leading businesses with top independent professionals across the globe. Built for high performance, agility, and trust.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-btn" aria-label="GitHub">gh</a>
+            <a href="#" class="social-btn" aria-label="Discord">dc</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="marketplace.html?cat=Web+Development">Web Development</a></li>
+            <li><a href="marketplace.html?cat=Graphic+Design">Graphic Design</a></li>
+            <li><a href="marketplace.html?cat=Mobile+App+Development">Mobile Apps</a></li>
+            <li><a href="marketplace.html?cat=Data+Analysis">Data Science</a></li>
+            <li><a href="marketplace.html?cat=Digital+Marketing">Digital Marketing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>For Clients</h4>
+          <ul>
+            <li><a href="marketplace.html?tab=services">Project Catalog</a></li>
+            <li><a href="marketplace.html?tab=freelancers">Freelancers Directory</a></li>
+            <li><a href="index.html#how-it-works">Escrow Security</a></li>
+            <li><a href="index.html#about">Client Success Stories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>For Freelancers</h4>
+          <ul>
+            <li><a href="#" class="btn-open-register">Become a Seller</a></li>
+            <li><a href="index.html#how-it-works">Freelancer Guides</a></li>
+            <li><a href="marketplace.html">Community Hub</a></li>
+            <li><a href="index.html#about">Skill Certifications</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#about">About WorkSphere</a></li>
+            <li><a href="index.html#about">Careers</a></li>
+            <li><a href="index.html#about">Privacy Policy</a></li>
+            <li><a href="index.html#about">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved. Freelancing Marketplace Platform.</p>
+        <div class="footer-legal-links">
+          <a href="index.html#about">Privacy</a>
+          <a href="index.html#about">Terms</a>
+          <a href="index.html#about">Cookies</a>
+          <a href="index.html#about">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================================================================
+       Auth Modal (Login / Register)
+       ================================================================= -->
+  <div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal" type="button">✕</button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" id="tabLogin" type="button">Log In</button>
+        <button class="modal-tab-btn" id="tabRegister" type="button">Register</button>
+      </div>
+
+      <h3 id="modalTitle" style="font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.25rem;">
+        Welcome back to WorkSphere
+      </h3>
+
+      <form id="authForm">
+        <div class="role-selector" id="roleSelector" style="display: none;">
+          <div class="role-option active" data-role="client">
+            💼 I want to Hire (Client)
+          </div>
+          <div class="role-option" data-role="freelancer">
+            💻 I want to Work (Freelancer)
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="authEmail">Work or Personal Email</label>
+          <input type="email" id="authEmail" class="form-control" placeholder="name@company.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="authPassword">Password</label>
+          <input type="password" id="authPassword" class="form-control" placeholder="••••••••••••" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="authSubmitBtn" style="width: 100%; margin-top: 0.5rem;">
+          Sign In
+        </button>
+      </form>
+
+      <p id="authSubtext" style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 1.25rem;">
+        Don't have an account? <a href="#" id="switchRegister" style="color: var(--primary); font-weight:700;">Create one for free</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/marketplace.js"></script>
+</body>
+</html>

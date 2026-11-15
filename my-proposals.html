@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your submitted job proposals, bids, and application statuses on WorkSphere.">
+  <title>My Submitted Proposals | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+          <li><a href="my-proposals.html" class="nav-link active">My Proposals</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="jobs.html" class="btn btn-primary btn-sm">Find More Jobs</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Proposals Dashboard Section -->
+  <main class="dashboard-body-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="jobs.html">Find Jobs</a>
+        <span>/</span>
+        <span class="current">My Proposals</span>
+      </div>
+
+      <!-- Header & Stats Summary -->
+      <div class="proposals-header-wrap">
+        <div>
+          <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 0.35rem;">
+            My Submitted Proposals
+          </h1>
+          <p class="form-subtitle">
+            Track your client pitches, proposed rates, delivery schedules, and current client hiring statuses.
+          </p>
+        </div>
+        <a href="jobs.html" class="btn btn-outline">
+          🔍 Search Open Vacancies
+        </a>
+      </div>
+
+      <!-- Quick Stats Row -->
+      <div class="proposals-stats-row">
+        <div class="prop-stat-box">
+          <span class="prop-stat-label">Total Proposals</span>
+          <strong class="prop-stat-val" id="statTotalProps">0</strong>
+        </div>
+        <div class="prop-stat-box">
+          <span class="prop-stat-label">Shortlisted / Active</span>
+          <strong class="prop-stat-val" style="color: var(--primary);" id="statShortlistedProps">0</strong>
+        </div>
+        <div class="prop-stat-box">
+          <span class="prop-stat-label">Average Bid Amount</span>
+          <strong class="prop-stat-val" style="color: var(--secondary);" id="statAvgBid">$0</strong>
+        </div>
+      </div>
+
+      <!-- Proposals List -->
+      <div class="my-proposals-container" id="proposalsListContainer">
+        <!-- Rendered dynamically by my-proposals.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state-card" id="noProposalsState" style="display: none;">
+        <div class="empty-icon">📝</div>
+        <h3>No Submitted Proposals Yet</h3>
+        <p>You haven't submitted any job proposals yet. Browse our open job board and submit your first pitch!</p>
+        <a href="jobs.html" class="btn btn-primary">Browse Open Jobs</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="jobs.html">Find Jobs</a>
+          <a href="my-proposals.html">My Proposals</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/my-proposals.js"></script>
+</body>
+</html>
+

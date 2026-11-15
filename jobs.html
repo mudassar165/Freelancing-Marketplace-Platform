@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse high-impact freelance jobs, contracts, and remote projects across tech, design, and marketing on WorkSphere.">
+  <title>Find Jobs & Remote Projects | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link active">Find Jobs</a></li>
+          <li><a href="marketplace.html?tab=services" class="nav-link">Services</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="orders.html" class="nav-link">My Orders</a></li>
+          <li><a href="messages.html" class="nav-link">Messages</a></li>
+          <li><a href="notifications.html" class="nav-link">Notifications</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+          <li><a href="my-proposals.html" class="nav-link">My Proposals</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="post-job.html" class="btn btn-primary btn-sm">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Post a Job
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Jobs Hero Header -->
+  <section class="marketplace-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Find Jobs</span>
+      </div>
+
+      <div class="marketplace-title-row">
+        <div>
+          <h1 class="marketplace-heading">Find Freelance Jobs & Projects</h1>
+          <p class="marketplace-subheading">
+            Submit proposals to verified global clients, work with secured escrow milestones, and grow your freelance career.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="my-proposals.html" class="btn btn-secondary">
+            📋 My Submitted Proposals
+          </a>
+          <a href="post-job.html" class="btn btn-primary">
+            ➕ Post a New Job
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Jobs Section -->
+  <main class="marketplace-main-section">
+    <div class="container">
+
+      <!-- Job Search & Filter Toolbar -->
+      <div class="market-filter-bar">
+        <!-- Keyword Search -->
+        <div class="market-search-box">
+          <svg class="search-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="jobSearchInput" placeholder="Search jobs by title, skills (e.g. React, Figma, Python), or keywords..." autocomplete="off">
+          <button type="button" id="clearJobSearchBtn" class="clear-search-btn" style="display: none;" title="Clear search">✕</button>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="market-filters-group">
+          <!-- Category Filter -->
+          <div class="filter-select-wrap">
+            <label for="jobCategoryFilter" class="filter-label">Category:</label>
+            <select id="jobCategoryFilter" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Graphic Design">Graphic Design</option>
+              <option value="Mobile App Development">Mobile App Development</option>
+              <option value="Data Analysis">Data Analysis</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="AI & Machine Learning">AI & Machine Learning</option>
+            </select>
+          </div>
+
+          <!-- Experience Filter -->
+          <div class="filter-select-wrap">
+            <label for="jobExpFilter" class="filter-label">Experience:</label>
+            <select id="jobExpFilter" class="filter-select">
+              <option value="all">Any Experience</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Expert">Expert</option>
+            </select>
+          </div>
+
+          <!-- Sort Filter -->
+          <div class="filter-select-wrap">
+            <label for="jobSortFilter" class="filter-label">Sort By:</label>
+            <select id="jobSortFilter" class="filter-select">
+              <option value="newest">Newest First</option>
+              <option value="budget-desc">Highest Budget</option>
+              <option value="budget-asc">Lowest Budget</option>
+              <option value="proposals-asc">Fewest Proposals</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meta Summary Row -->
+      <div class="market-meta-row">
+        <div class="results-count-label" id="jobsCountLabel">
+          Showing <strong>6</strong> open vacancies
+        </div>
+
+        <div class="active-filter-tags" id="activeJobFilterTags">
+          <!-- Active filter pills -->
+        </div>
+
+        <button class="btn btn-sm btn-ghost reset-filters-btn" id="resetJobFiltersBtn" type="button" style="display: none;">
+          Clear Filters ✕
+        </button>
+      </div>
+
+      <!-- Jobs List Container -->
+      <div class="jobs-listing-container" id="jobsListContainer">
+        <!-- Rendered dynamically by jobs.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state-card" id="noJobsFoundState" style="display: none;">
+        <div class="empty-icon">💼</div>
+        <h3>No Jobs Matching Your Criteria</h3>
+        <p>Try searching with broader keywords, selecting all categories, or reset your filters.</p>
+        <button class="btn btn-primary" id="btnResetAllJobs" type="button">Reset Filters</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="marketplace.html">Marketplace</a>
+          <a href="jobs.html">Find Jobs</a>
+          <a href="my-proposals.html">My Proposals</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Saved Favorites - Bookmarked services and top freelance talent on WorkSphere.">
+  <title>My Saved Favorites | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="orders.html" class="nav-link">My Orders</a></li>
+          <li><a href="favorites.html" class="nav-link active">Favorites</a></li>
+          <li><a href="messages.html" class="nav-link">Messages</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="marketplace.html" class="btn btn-primary btn-sm">Explore Marketplace</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Favorites Header -->
+  <section class="marketplace-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">My Favorites</span>
+      </div>
+
+      <div class="marketplace-title-row">
+        <div>
+          <h1 class="marketplace-heading">Saved Services & Freelancers</h1>
+          <p class="marketplace-subheading">
+            Easily organize, compare, and hire your shortlisted freelance specialists and turnkey services.
+          </p>
+        </div>
+
+        <a href="marketplace.html" class="btn btn-outline">
+          🔍 Discover More Talent
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Favorites Body -->
+  <main class="dashboard-body-section">
+    <div class="container">
+
+      <!-- Filter Tabs -->
+      <div class="orders-toolbar-wrap">
+        <div class="order-status-tabs" role="tablist">
+          <button type="button" class="order-status-tab fav-filter active" data-filter="all">
+            All Bookmarks (<span id="countFavAll">0</span>)
+          </button>
+          <button type="button" class="order-status-tab fav-filter" data-filter="service">
+            Saved Services (<span id="countFavServices">0</span>)
+          </button>
+          <button type="button" class="order-status-tab fav-filter" data-filter="freelancer">
+            Saved Freelancers (<span id="countFavFreelancers">0</span>)
+          </button>
+        </div>
+      </div>
+
+      <!-- Favorites Grid -->
+      <div class="marketplace-grid" id="favoritesGridContainer">
+        <!-- Rendered dynamically by js/favorites.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state-card" id="noFavoritesState" style="display: none;">
+        <div class="empty-icon">🤍</div>
+        <h3>No Favorites Saved Yet</h3>
+        <p>Save services or freelancer profiles by clicking the heart button while browsing the marketplace.</p>
+        <a href="marketplace.html" class="btn btn-primary">Browse Marketplace Services</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="marketplace.html">Marketplace</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="favorites.html">Favorites</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/favorites.js"></script>
+</body>
+</html>
+

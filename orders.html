@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Orders & Active Projects - Track milestones, deliveries, and escrow payments on WorkSphere.">
+  <title>My Orders & Projects | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar role-workspace-navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="orders.html" class="nav-link active">My Orders</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="messages.html" class="nav-link">Messages</a></li>
+          <li><a href="notifications.html" class="nav-link">Notifications</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+          <li><a href="my-proposals.html" class="nav-link">My Proposals</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Role View Mode Toggle -->
+        <div class="role-perspective-switcher">
+          <span class="perspective-label">View as:</span>
+          <button type="button" class="btn btn-sm perspective-btn active" id="viewAsFreelancerBtn" data-role="freelancer">
+            Freelancer
+          </button>
+          <button type="button" class="btn btn-sm perspective-btn" id="viewAsClientBtn" data-role="client">
+            Client
+          </button>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Orders Hero Section -->
+  <section class="marketplace-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Orders & Active Projects</span>
+      </div>
+
+      <div class="marketplace-title-row">
+        <div>
+          <h1 class="marketplace-heading">Project & Order Management</h1>
+          <p class="marketplace-subheading" id="ordersSubheading">
+            Viewing projects from your <strong>Freelancer Workspace</strong>. Track milestones, upload deliveries, and release escrow payments.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="jobs.html" class="btn btn-secondary">
+            Find New Work
+          </a>
+          <a href="create-service.html" class="btn btn-primary">
+            + Offer a Service
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Orders Dashboard -->
+  <main class="dashboard-body-section">
+    <div class="container">
+
+      <!-- Summary KPI Metric Cards -->
+      <div class="orders-kpi-grid">
+        <div class="order-kpi-card">
+          <span class="kpi-label">Active Projects</span>
+          <strong class="kpi-value" id="kpiActiveCount">2</strong>
+          <span class="kpi-sub">In progress or submitted</span>
+        </div>
+        <div class="order-kpi-card">
+          <span class="kpi-label">Secured in Escrow</span>
+          <strong class="kpi-value" style="color: var(--secondary);" id="kpiEscrowFunds">$4,400</strong>
+          <span class="kpi-sub">Protected payments</span>
+        </div>
+        <div class="order-kpi-card">
+          <span class="kpi-label">Completed Orders</span>
+          <strong class="kpi-value" id="kpiCompletedCount">1</strong>
+          <span class="kpi-sub">Ready for reviews</span>
+        </div>
+        <div class="order-kpi-card">
+          <span class="kpi-label">Pending Kickoff</span>
+          <strong class="kpi-value" style="color: var(--accent-amber);" id="kpiPendingCount">1</strong>
+          <span class="kpi-sub">Awaiting milestone start</span>
+        </div>
+      </div>
+
+      <!-- Status Tabs Toolbar -->
+      <div class="orders-toolbar-wrap">
+        <div class="order-status-tabs" role="tablist">
+          <button type="button" class="order-status-tab active" data-status="all">
+            All Projects (<span id="countAll">4</span>)
+          </button>
+          <button type="button" class="order-status-tab" data-status="In Progress">
+            In Progress (<span id="countInProgress">1</span>)
+          </button>
+          <button type="button" class="order-status-tab" data-status="Submitted">
+            Submitted (<span id="countSubmitted">1</span>)
+          </button>
+          <button type="button" class="order-status-tab" data-status="Completed">
+            Completed (<span id="countCompleted">1</span>)
+          </button>
+          <button type="button" class="order-status-tab" data-status="Pending">
+            Pending (<span id="countPending">1</span>)
+          </button>
+        </div>
+
+        <div class="order-search-filter">
+          <input type="text" id="orderSearchInput" class="form-control" style="padding: 0.5rem 0.85rem; font-size: 0.875rem;" placeholder="Search projects by title...">
+        </div>
+      </div>
+
+      <!-- Orders List Container -->
+      <div class="orders-list-container" id="ordersListContainer">
+        <!-- Rendered dynamically by js/orders.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state-card" id="noOrdersState" style="display: none;">
+        <div class="empty-icon">📁</div>
+        <h3>No Projects Found</h3>
+        <p>No active or completed orders match your current filter settings.</p>
+        <button class="btn btn-primary" id="resetOrdersFilterBtn" type="button">Show All Projects</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="marketplace.html">Marketplace</a>
+          <a href="orders.html">Orders</a>
+          <a href="profile.html">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/orders.js"></script>
+</body>
+</html>

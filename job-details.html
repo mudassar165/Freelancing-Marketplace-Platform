@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View Job Details and Submit a Proposal - WorkSphere Freelance Marketplace">
+  <title>Job Details & Proposal | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link active">Find Jobs</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+          <li><a href="my-proposals.html" class="nav-link">My Proposals</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="post-job.html" class="btn btn-secondary btn-sm">Post a Job</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Job Details Content Section -->
+  <main class="details-page-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="jobs.html">Find Jobs</a>
+        <span>/</span>
+        <span class="current" id="jobBreadcrumb">Job Details</span>
+      </div>
+
+      <div class="details-layout-grid">
+        <!-- Main Content (Left Column) -->
+        <div class="details-main-content">
+
+          <!-- Job Summary Block -->
+          <div class="details-card-block">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+              <span class="badge badge-primary" id="jobCategoryBadge">Web Development</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);" id="jobPostedTime">Posted 2 hours ago</span>
+            </div>
+
+            <h1 class="details-title" id="jobTitleDisplay" style="margin-bottom: 1.25rem;">
+              Job Title Loading...
+            </h1>
+
+            <div class="job-meta-grid">
+              <div class="job-meta-item">
+                <span class="m-label">Est. Budget</span>
+                <strong class="m-val" id="jobBudgetDisplay">$2,800</strong>
+              </div>
+              <div class="job-meta-item">
+                <span class="m-label">Project Type</span>
+                <strong class="m-val" id="jobTypeDisplay">Fixed Price</strong>
+              </div>
+              <div class="job-meta-item">
+                <span class="m-label">Experience Required</span>
+                <strong class="m-val" id="jobExpDisplay">Expert</strong>
+              </div>
+              <div class="job-meta-item">
+                <span class="m-label">Proposals</span>
+                <strong class="m-val" id="jobProposalsDisplay">6 Submitted</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description Block -->
+          <div class="details-card-block">
+            <h3>Project Scope & Requirements</h3>
+            <p id="jobDescriptionText" class="details-description-text">
+              Loading job description...
+            </p>
+          </div>
+
+          <!-- Skills Required -->
+          <div class="details-card-block">
+            <h3>Skills & Expertise Required</h3>
+            <div class="fl-skills" id="jobSkillsContainer" style="justify-content: flex-start;">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- =================================================================
+               Proposal Submission Form Section
+               ================================================================= -->
+          <div class="details-card-block" id="applySection" style="border: 2px solid var(--primary); background: #ffffff;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.25rem; flex-wrap: wrap; gap:0.5rem;">
+              <h3 style="color: var(--primary); margin-bottom: 0;">📝 Submit Your Proposal</h3>
+              <span class="badge badge-success">Escrow Protected Contract</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.75rem;">
+              Craft a compelling proposal describing your approach, pricing, and estimated delivery timeline.
+            </p>
+
+            <form id="submitProposalForm" novalidate>
+              <div class="form-grid-2col">
+                <!-- Proposed Price -->
+                <div class="form-group">
+                  <label for="proposalPrice">Proposed Bid Price (USD $) <span class="req">*</span></label>
+                  <input type="number" id="proposalPrice" class="form-control" min="10" step="5" required>
+                  <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+                    Total amount you will receive upon completion.
+                  </small>
+                </div>
+
+                <!-- Estimated Delivery Days -->
+                <div class="form-group">
+                  <label for="proposalDelivery">Estimated Delivery (Days) <span class="req">*</span></label>
+                  <input type="number" id="proposalDelivery" class="form-control" min="1" max="180" required placeholder="e.g. 14">
+                  <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+                    Calendar days to deliver complete project.
+                  </small>
+                </div>
+              </div>
+
+              <!-- Cover Letter -->
+              <div class="form-group">
+                <label for="proposalCoverLetter">Cover Letter / Pitch <span class="req">*</span></label>
+                <textarea id="proposalCoverLetter" class="form-control" rows="6" required placeholder="Introduce yourself, outline your technical methodology, and explain why you are the best fit for this project..."></textarea>
+                <div class="field-feedback" id="coverLetterFeedback"></div>
+                <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+                  Minimum 40 characters detailing your relevant experience.
+                </small>
+              </div>
+
+              <!-- Relevant Skills / Experience -->
+              <div class="form-group">
+                <label for="proposalSkills">Relevant Skills & Technologies Highlighted</label>
+                <input type="text" id="proposalSkills" class="form-control" placeholder="e.g. React, TypeScript, Next.js, Stripe, PostgreSQL">
+              </div>
+
+              <div class="form-actions-row" style="margin-top: 1rem;">
+                <button type="submit" class="btn btn-primary btn-lg" id="btnSubmitProposal">
+                  🚀 Send Proposal to Client
+                </button>
+                <a href="jobs.html" class="btn btn-secondary btn-lg">
+                  Cancel
+                </a>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Sidebar / Client Details (Right Column) -->
+        <aside class="details-sidebar">
+          <div class="pricing-card-sticky">
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1.25rem;">
+              About the Client
+            </h3>
+
+            <div class="client-sidebar-profile">
+              <div class="client-avatar-row">
+                <div class="client-avatar-placeholder" id="clientAvatarLetter">C</div>
+                <div>
+                  <h4 class="client-name" id="clientNameDisplay">Apex Global Tech</h4>
+                  <span class="badge badge-success" style="font-size: 0.7rem;">Payment Verified ✓</span>
+                </div>
+              </div>
+
+              <div class="client-meta-stats">
+                <div class="c-meta-row">
+                  <span class="c-icon">📍</span>
+                  <div>
+                    <span class="c-label">Location</span>
+                    <strong class="c-val" id="clientLocationDisplay">San Francisco, USA</strong>
+                  </div>
+                </div>
+
+                <div class="c-meta-row">
+                  <span class="c-icon">⭐</span>
+                  <div>
+                    <span class="c-label">Client Rating</span>
+                    <strong class="c-val" id="clientRatingDisplay">4.95 of 38 reviews</strong>
+                  </div>
+                </div>
+
+                <div class="c-meta-row">
+                  <span class="c-icon">💵</span>
+                  <div>
+                    <span class="c-label">Total Spent</span>
+                    <strong class="c-val" id="clientSpentDisplay">$65,000+</strong>
+                  </div>
+                </div>
+
+                <div class="c-meta-row">
+                  <span class="c-icon">📅</span>
+                  <div>
+                    <span class="c-label">Job Duration</span>
+                    <strong class="c-val" id="jobDurationDisplay">3-4 Weeks</strong>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#applySection" class="btn btn-primary btn-block" style="margin-top: 1.5rem;">
+                Apply to This Job
+              </a>
+
+              <div class="guarantee-note">
+                <span>🛡️ Escrow Protection Guaranteed</span>
+                <p>Client funds are secured before you start. Submit milestones to receive release of funds.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="jobs.html">Find Jobs</a>
+          <a href="my-proposals.html">My Proposals</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/job-details.js"></script>
+</body>
+</html>
+

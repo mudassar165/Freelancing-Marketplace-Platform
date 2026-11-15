@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rate Your Experience & Client Reviews - WorkSphere Freelance Marketplace">
+  <title>Reviews & Client Ratings | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="orders.html" class="nav-link">My Orders</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="messages.html" class="nav-link">Messages</a></li>
+          <li><a href="notifications.html" class="nav-link">Notifications</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="profile.html" class="btn btn-secondary btn-sm">My Profile</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Reviews Section -->
+  <main class="dashboard-body-section">
+    <div class="container" style="max-width: 960px;">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="orders.html">Orders</a>
+        <span>/</span>
+        <span class="current">Rate & Review</span>
+      </div>
+
+      <!-- Rate Your Experience Form Card -->
+      <div class="form-container-card" id="leaveReviewCard" style="margin-bottom: 3rem; border: 2px solid var(--border-color);">
+        <div class="form-header-bar">
+          <div>
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem;">
+              <span class="badge badge-success">Completed Project Feedback</span>
+              <span class="order-id-badge" id="revOrderIdBadge">#ORD-103</span>
+            </div>
+            <h1 style="font-size: 2rem; font-weight: 800; color: var(--dark);">
+              Rate Your Experience
+            </h1>
+            <p class="form-subtitle" id="revSubTitle">
+              Leave public feedback for your recent project collaboration.
+            </p>
+          </div>
+          <a href="orders.html" class="btn btn-sm btn-secondary">Back to Orders</a>
+        </div>
+
+        <form id="submitReviewForm" novalidate>
+
+          <!-- Interactive Star Selector -->
+          <div class="form-group" style="text-align: center; margin-bottom: 2rem;">
+            <label style="font-size: 1.05rem; font-weight: 700; color: var(--dark); display: block; margin-bottom: 0.75rem;">
+              Overall Performance Rating <span class="req">*</span>
+            </label>
+            <div class="star-rating-picker" id="starRatingPicker">
+              <span class="star-pick active" data-rating="1">★</span>
+              <span class="star-pick active" data-rating="2">★</span>
+              <span class="star-pick active" data-rating="3">★</span>
+              <span class="star-pick active" data-rating="4">★</span>
+              <span class="star-pick active" data-rating="5">★</span>
+            </div>
+            <div id="starRatingLabel" style="font-size: 0.95rem; font-weight: 700; color: #f59e0b; margin-top: 0.5rem;">
+              5 Stars — Outstanding (Flawless Delivery)
+            </div>
+          </div>
+
+          <div class="form-grid-2col">
+            <!-- Reviewer Name -->
+            <div class="form-group">
+              <label for="revReviewerName">Your Name / Organization <span class="req">*</span></label>
+              <input type="text" id="revReviewerName" class="form-control" required placeholder="e.g. DirectRetail Group">
+            </div>
+
+            <!-- Project Title -->
+            <div class="form-group">
+              <label for="revProjectTitle">Project Title</label>
+              <input type="text" id="revProjectTitle" class="form-control" placeholder="e.g. Executive BI Dashboard & Pipeline">
+            </div>
+          </div>
+
+          <!-- Review Comment -->
+          <div class="form-group">
+            <label for="revComment">Detailed Feedback & Review <span class="req">*</span></label>
+            <textarea id="revComment" class="form-control" rows="5" required placeholder="Describe the quality of communication, technical execution, turnaround time, and adherence to milestones..."></textarea>
+            <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.25rem; display: block;">
+              Minimum 20 characters sharing your authentic collaboration experience.
+            </small>
+          </div>
+
+          <!-- Submit Action -->
+          <div class="form-actions-row">
+            <button type="submit" class="btn btn-primary btn-lg" id="btnSubmitReview">
+              ⭐ Submit Public Review
+            </button>
+            <a href="orders.html" class="btn btn-secondary btn-lg">
+              Skip for Now
+            </a>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Display Existing Reviews Section -->
+      <div class="form-container-card" style="padding: 2.25rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.25rem; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--dark); margin-bottom: 0.25rem;">
+              Community Reviews & Ratings
+            </h2>
+            <p class="form-subtitle">Authentic testimonials verified across completed marketplace escrows.</p>
+          </div>
+          <span class="badge badge-primary" id="totalReviewsBadge">3 Verified Reviews</span>
+        </div>
+
+        <div class="reviews-feed-container" id="reviewsFeedContainer">
+          <!-- Populated dynamically by js/reviews.js -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="orders.html">Orders</a>
+          <a href="messages.html">Messages</a>
+          <a href="reviews.html">Reviews</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/reviews.js"></script>
+</body>
+</html>
+

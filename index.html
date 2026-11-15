@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WorkSphere - Connect with top freelance talent and hire experts in web development, design, mobile apps, and marketing.">
+  <title>WorkSphere | Freelancing Marketplace Platform</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =================================================================
+       Navigation Bar
+       ================================================================= -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="orders.html" class="nav-link">My Orders</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="messages.html" class="nav-link">Messages</a></li>
+          <li><a href="notifications.html" class="nav-link">Notifications <span class="nav-badge" id="navNotifBadge">3</span></a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-open-login" type="button">Log In</button>
+        <button class="btn btn-primary btn-open-register" type="button">Join WorkSphere</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       Hero Section
+       ================================================================= -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="dot"></span>
+            <span>Over 45,000+ Verified Experts Ready to Work</span>
+          </div>
+
+          <h1 class="hero-title">
+            Find the Perfect <span class="text-gradient">Freelance Talent</span> for Any Project
+          </h1>
+
+          <p class="hero-subtitle">
+            Scale your business faster with elite developers, creative designers, mobile architects, and marketers. Protected payments, verified credentials, and instant hiring.
+          </p>
+
+          <!-- Interactive Search Bar Component -->
+          <div class="hero-search-wrapper">
+            <div class="search-type-tabs">
+              <button type="button" class="search-type-btn active" data-type="services">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                Search Services
+              </button>
+              <button type="button" class="search-type-btn" data-type="freelancers">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Search Freelancers
+              </button>
+            </div>
+
+            <form class="search-bar-form" id="heroSearchForm">
+              <div class="search-input-group">
+                <span class="search-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" id="heroSearchInput" class="search-input" placeholder="Search for services (e.g. website design, mobile app, logo)..." autocomplete="off">
+              </div>
+
+              <div class="search-filter-divider"></div>
+
+              <select id="categorySelect" class="search-category-select" aria-label="Select Category">
+                <option value="all">All Categories</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Mobile App Development">Mobile App Development</option>
+                <option value="Data Analysis">Data Analysis</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+              </select>
+
+              <button type="submit" class="btn btn-primary">
+                Search
+              </button>
+            </form>
+          </div>
+
+          <!-- Popular Search Tags -->
+          <div class="popular-tags">
+            <span class="popular-label">Popular:</span>
+            <button type="button" class="tag-pill">React</button>
+            <button type="button" class="tag-pill">UI/UX Design</button>
+            <button type="button" class="tag-pill">Flutter App</button>
+            <button type="button" class="tag-pill">Python Data</button>
+            <button type="button" class="tag-pill">SEO Growth</button>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual">
+          <!-- Floating Top Badge -->
+          <div class="floating-badge badge-top-right">
+            <div class="floating-icon icon-star">★</div>
+            <div class="floating-info">
+              <h5>4.98 / 5 Rating</h5>
+              <p>From 120,000+ client reviews</p>
+            </div>
+          </div>
+
+          <!-- Main Card -->
+          <div class="hero-main-card">
+            <div class="hero-image-wrap">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Freelancers collaborating on digital projects">
+              <div class="hero-image-overlay">
+                <span class="badge badge-primary" style="margin-bottom: 0.5rem; width: fit-content;">Featured Pro Workspace</span>
+                <h4>Global Collaboration Without Borders</h4>
+                <p>Hire specialized professionals on demand with secured milestone escrows.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Bottom Badge -->
+          <div class="floating-badge badge-bottom-left">
+            <div class="floating-icon icon-shield">🛡️</div>
+            <div class="floating-info">
+              <h5>100% Escrow Protection</h5>
+              <p>Funds released only on your approval</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       Platform Stats Counter Bar
+       ================================================================= -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid" id="statsGrid">
+        <!-- Rendered dynamically by data.js & main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       Popular Categories Section
+       ================================================================= -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Browse Expertise</span>
+        <h2>Popular Service Categories</h2>
+        <p>Explore thousands of high-demand skills across diverse creative and technical specializations.</p>
+      </div>
+
+      <div class="categories-grid" id="categoriesGrid">
+        <!-- Dynamically populated from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       How It Works Section
+       ================================================================= -->
+  <section class="how-it-works-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple & Transparent</span>
+        <h2>How WorkSphere Works</h2>
+        <p>From initial job posting to deliverable sign-off, our workflow makes remote collaboration effortless.</p>
+      </div>
+
+      <div class="steps-grid" id="howItWorksGrid">
+        <!-- Dynamically populated from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       Top Rated Freelancers Section
+       ================================================================= -->
+  <section class="freelancers-section" id="freelancers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Verified Experts</span>
+        <h2>Top Rated Freelancers</h2>
+        <p>Hand-picked, high-performing independent specialists with proven track records and exceptional reviews.</p>
+      </div>
+
+      <div class="freelancer-grid" id="freelancersGrid">
+        <!-- Dynamically populated from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       Featured Services Section
+       ================================================================= -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Turnkey Deliverables</span>
+        <h2>Featured Marketplace Services</h2>
+        <p>Browse transparently packaged freelance gigs with clear deliverables, fixed prices, and fast turnaround.</p>
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <!-- Dynamically populated from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       Why Choose Us / Trust & Safety
+       ================================================================= -->
+  <section class="features-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Built For Confidence</span>
+        <h2>Why Businesses Trust WorkSphere</h2>
+        <p>We provide the security, tooling, and support your projects need to succeed without friction.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-wrap escrow">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Milestone Escrow Protection</h3>
+          <p>Your money stays completely safe. Payments are deposited into secure escrow and only released when you inspect and approve each project deliverable.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrap verified">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3>Vetted Talent Quality</h3>
+          <p>Every freelancer undergoes identity verification, portfolio checks, and skill assessments to ensure you collaborate only with proven industry practitioners.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrap support">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </div>
+          <h3>24/7 Dispute & Concierge Support</h3>
+          <p>Our dedicated mediation and customer service teams are on standby 24/7 to resolve queries, assist contracts, and maintain platform integrity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       Call to Action (CTA) Banner
+       ================================================================= -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-content">
+          <h2>Ready to Bring Your Ideas to Life?</h2>
+          <p>Join thousands of growing companies and ambitious freelancers building the future on WorkSphere today.</p>
+          <div class="cta-buttons">
+            <a href="marketplace.html" class="btn btn-primary btn-lg" type="button">Hire a Freelancer</a>
+            <a href="marketplace.html" class="btn btn-secondary btn-lg" type="button">Become a Freelancer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       Footer
+       ================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="logo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path><circle cx="8" cy="12" r="2"></circle></svg>
+            </div>
+            <span>Work<span class="highlight">Sphere</span></span>
+          </a>
+          <p>
+            WorkSphere connects leading businesses with top independent professionals across the globe. Built for high performance, agility, and trust.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-btn" aria-label="GitHub">gh</a>
+            <a href="#" class="social-btn" aria-label="Discord">dc</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#categories">Web Development</a></li>
+            <li><a href="#categories">Graphic Design</a></li>
+            <li><a href="#categories">Mobile Apps</a></li>
+            <li><a href="#categories">Data Science</a></li>
+            <li><a href="#categories">Digital Marketing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>For Clients</h4>
+          <ul>
+            <li><a href="#services">How to Hire</a></li>
+            <li><a href="#services">Project Catalog</a></li>
+            <li><a href="#freelancers">Enterprise Solutions</a></li>
+            <li><a href="#how-it-works">Escrow Security</a></li>
+            <li><a href="#about">Client Success Stories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>For Freelancers</h4>
+          <ul>
+            <li><a href="#" class="btn-open-register">Become a Seller</a></li>
+            <li><a href="#how-it-works">Freelancer Guides</a></li>
+            <li><a href="#services">Community Hub</a></li>
+            <li><a href="#about">Skill Certifications</a></li>
+            <li><a href="#services">Payment Methods</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About WorkSphere</a></li>
+            <li><a href="#about">Careers</a></li>
+            <li><a href="#about">Press & Media</a></li>
+            <li><a href="#about">Privacy Policy</a></li>
+            <li><a href="#about">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved. Built for Freelancing Marketplace Platform Course.</p>
+        <div class="footer-legal-links">
+          <a href="#about">Privacy</a>
+          <a href="#about">Terms</a>
+          <a href="#about">Cookies</a>
+          <a href="#about">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================================================================
+       Auth Modal (Login / Register)
+       ================================================================= -->
+  <div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal" type="button">✕</button>
+
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" id="tabLogin" type="button">Log In</button>
+        <button class="modal-tab-btn" id="tabRegister" type="button">Register</button>
+      </div>
+
+      <h3 id="modalTitle" style="font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 1.25rem;">
+        Welcome back to WorkSphere
+      </h3>
+
+      <form id="authForm">
+        <!-- Role selector for registration -->
+        <div class="role-selector" id="roleSelector" style="display: none;">
+          <div class="role-option active" data-role="client">
+            💼 I want to Hire (Client)
+          </div>
+          <div class="role-option" data-role="freelancer">
+            💻 I want to Work (Freelancer)
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="authEmail">Work or Personal Email</label>
+          <input type="email" id="authEmail" class="form-control" placeholder="name@company.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="authPassword">Password</label>
+          <input type="password" id="authPassword" class="form-control" placeholder="••••••••••••" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="authSubmitBtn" style="width: 100%; margin-top: 0.5rem;">
+          Sign In
+        </button>
+      </form>
+
+      <p id="authSubtext" style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 1.25rem;">
+        Don't have an account? <a href="#" id="switchRegister" style="color: var(--primary); font-weight:700;">Create one for free</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

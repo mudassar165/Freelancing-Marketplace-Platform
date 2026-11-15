@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="User Dashboard - Comprehensive Freelancer and Client workspace on WorkSphere.">
+  <title>User Dashboard | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar dashboard-navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+          <li><a href="orders.html" class="nav-link">My Orders</a></li>
+          <li><a href="favorites.html" class="nav-link">Favorites</a></li>
+          <li><a href="messages.html" class="nav-link">Messages</a></li>
+          <li><a href="notifications.html" class="nav-link">Notifications</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Role Dashboard Switcher -->
+        <div class="role-perspective-switcher">
+          <span class="perspective-label">Mode:</span>
+          <button type="button" class="btn btn-sm perspective-btn active" id="dashRoleFreelancerBtn" data-role="freelancer">
+            Freelancer
+          </button>
+          <button type="button" class="btn btn-sm perspective-btn" id="dashRoleClientBtn" data-role="client">
+            Client
+          </button>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Hero Header -->
+  <section class="marketplace-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current" id="dashBreadcrumb">Freelancer Dashboard</span>
+      </div>
+
+      <div class="marketplace-title-row">
+        <div>
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.35rem;">
+            <h1 class="marketplace-heading" id="dashGreetingTitle">Welcome Back, Sarah!</h1>
+            <span class="badge badge-primary" id="dashModeBadge">Freelancer Workspace</span>
+          </div>
+          <p class="marketplace-subheading" id="dashSubheading">
+            Track your project earnings, active contracts, client feedback, and direct communications.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="profile.html?tab=edit" class="btn btn-secondary">
+            ✏️ Edit Profile
+          </a>
+          <a href="create-service.html" class="btn btn-primary" id="dashPrimaryActionBtn">
+            ➕ Create New Service
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Body Section -->
+  <main class="dashboard-body-section">
+    <div class="container">
+
+      <!-- =================================================================
+           FREELANCER DASHBOARD VIEW
+           ================================================================= -->
+      <div id="freelancerDashboardView">
+        <!-- KPI Metrics Grid -->
+        <div class="orders-kpi-grid">
+          <div class="order-kpi-card">
+            <span class="kpi-label">Total Earnings</span>
+            <strong class="kpi-value" style="color: var(--secondary);" id="flStatEarnings">$5,400</strong>
+            <span class="kpi-sub">Released from completed escrows</span>
+          </div>
+          <div class="order-kpi-card">
+            <span class="kpi-label">Active Projects</span>
+            <strong class="kpi-value" style="color: var(--primary);" id="flStatActive">2</strong>
+            <span class="kpi-sub">Currently in progress</span>
+          </div>
+          <div class="order-kpi-card">
+            <span class="kpi-label">Completed Orders</span>
+            <strong class="kpi-value" id="flStatCompleted">1</strong>
+            <span class="kpi-sub">100% On-time delivery</span>
+          </div>
+          <div class="order-kpi-card">
+            <span class="kpi-label">Client Satisfaction</span>
+            <strong class="kpi-value" style="color: #f59e0b;" id="flStatRating">⭐ 4.95</strong>
+            <span class="kpi-sub">Based on verified reviews</span>
+          </div>
+        </div>
+
+        <!-- 2-Column Dashboard Layout -->
+        <div class="details-layout-grid">
+          <!-- Main Left Column -->
+          <div class="details-main-content">
+            <!-- Active Projects Section -->
+            <div class="details-card-block">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.25rem; flex-wrap:wrap; gap:0.5rem;">
+                <div>
+                  <h3 style="margin-bottom:0.25rem;">Active Projects & Escrows</h3>
+                  <p style="font-size:0.85rem; color:var(--text-muted);">Contracts in progress with clients.</p>
+                </div>
+                <a href="orders.html" class="btn btn-sm btn-outline">View All Orders</a>
+              </div>
+
+              <div id="flActiveProjectsContainer" class="dashboard-items-list">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+
+            <!-- My Published Services Section -->
+            <div class="details-card-block">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.25rem; flex-wrap:wrap; gap:0.5rem;">
+                <div>
+                  <h3 style="margin-bottom:0.25rem;">My Marketplace Services</h3>
+                  <p style="font-size:0.85rem; color:var(--text-muted);">Active services visible to prospective clients.</p>
+                </div>
+                <a href="create-service.html" class="btn btn-sm btn-primary">+ Add New Service</a>
+              </div>
+
+              <div id="flServicesContainer" class="profile-services-grid">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Right Column -->
+          <aside class="details-sidebar">
+            <!-- Recent Client Reviews -->
+            <div class="details-card-block" style="padding: 1.5rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+                <h4 style="font-size:1.05rem; font-weight:800; color:var(--dark);">Client Feedback</h4>
+                <a href="reviews.html" style="font-size:0.8rem; color:var(--primary); font-weight:700;">View All</a>
+              </div>
+
+              <div id="flRecentReviewsContainer" class="dash-sidebar-reviews">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+
+            <!-- Recent Messages -->
+            <div class="details-card-block" style="padding: 1.5rem; margin-top: 1.5rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+                <h4 style="font-size:1.05rem; font-weight:800; color:var(--dark);">Recent Messages</h4>
+                <a href="messages.html" style="font-size:0.8rem; color:var(--primary); font-weight:700;">Open Chat</a>
+              </div>
+
+              <div id="flRecentMessagesContainer" class="dash-sidebar-messages">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- =================================================================
+           CLIENT DASHBOARD VIEW
+           ================================================================= -->
+      <div id="clientDashboardView" style="display: none;">
+        <!-- Client KPI Metrics Grid -->
+        <div class="orders-kpi-grid">
+          <div class="order-kpi-card">
+            <span class="kpi-label">Total Escrow Budget</span>
+            <strong class="kpi-value" style="color: var(--primary);" id="clStatSpent">$9,000</strong>
+            <span class="kpi-sub">Across all contracts</span>
+          </div>
+          <div class="order-kpi-card">
+            <span class="kpi-label">Jobs Posted</span>
+            <strong class="kpi-value" id="clStatJobs">6</strong>
+            <span class="kpi-sub">Active vacancies on board</span>
+          </div>
+          <div class="order-kpi-card">
+            <span class="kpi-label">Proposals Received</span>
+            <strong class="kpi-value" style="color: var(--secondary);" id="clStatProps">55</strong>
+            <span class="kpi-sub">Freelancers awaiting review</span>
+          </div>
+          <div class="order-kpi-card">
+            <span class="kpi-label">Saved Favorites</span>
+            <strong class="kpi-value" style="color: #ef4444;" id="clStatFavs">2</strong>
+            <span class="kpi-sub">Bookmarked talent</span>
+          </div>
+        </div>
+
+        <!-- 2-Column Dashboard Layout -->
+        <div class="details-layout-grid">
+          <!-- Main Left Column -->
+          <div class="details-main-content">
+            <!-- Active Escrow Contracts Section -->
+            <div class="details-card-block">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.25rem; flex-wrap:wrap; gap:0.5rem;">
+                <div>
+                  <h3 style="margin-bottom:0.25rem;">Active Freelancer Contracts</h3>
+                  <p style="font-size:0.85rem; color:var(--text-muted);">Inspect milestones and release escrow payments.</p>
+                </div>
+                <a href="orders.html" class="btn btn-sm btn-outline">Manage Orders</a>
+              </div>
+
+              <div id="clActiveContractsContainer" class="dashboard-items-list">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+
+            <!-- Posted Jobs Board Section -->
+            <div class="details-card-block">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.25rem; flex-wrap:wrap; gap:0.5rem;">
+                <div>
+                  <h3 style="margin-bottom:0.25rem;">Posted Job Vacancies</h3>
+                  <p style="font-size:0.85rem; color:var(--text-muted);">Manage your job listings and review applicant proposals.</p>
+                </div>
+                <a href="post-job.html" class="btn btn-sm btn-primary">+ Post New Job</a>
+              </div>
+
+              <div id="clJobsContainer" class="dashboard-items-list">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Right Column -->
+          <aside class="details-sidebar">
+            <!-- Saved Favorites Quickview -->
+            <div class="details-card-block" style="padding: 1.5rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+                <h4 style="font-size:1.05rem; font-weight:800; color:var(--dark);">My Saved Favorites</h4>
+                <a href="favorites.html" style="font-size:0.8rem; color:var(--primary); font-weight:700;">View All</a>
+              </div>
+
+              <div id="clFavoritesContainer" class="dash-sidebar-favorites">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+
+            <!-- Client Messages Quickview -->
+            <div class="details-card-block" style="padding: 1.5rem; margin-top: 1.5rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+                <h4 style="font-size:1.05rem; font-weight:800; color:var(--dark);">Direct Messages</h4>
+                <a href="messages.html" style="font-size:0.8rem; color:var(--primary); font-weight:700;">Open Chat</a>
+              </div>
+
+              <div id="clMessagesContainer" class="dash-sidebar-messages">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="marketplace.html">Marketplace</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="orders.html">Orders</a>
+          <a href="favorites.html">Favorites</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

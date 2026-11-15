@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Direct Messaging & Collaboration Chat - WorkSphere Freelance Marketplace">
+  <title>Messages & Chat | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+            <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+            <circle cx="8" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="jobs.html" class="nav-link">Find Jobs</a></li>
+          <li><a href="orders.html" class="nav-link">My Orders</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="messages.html" class="nav-link active">Messages</a></li>
+          <li><a href="notifications.html" class="nav-link">Notifications <span class="nav-badge" id="navNotifBadge">3</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="profile.html" class="btn btn-secondary btn-sm">My Profile</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Messages Chat Interface -->
+  <main class="chat-main-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Messages & Chat</span>
+      </div>
+
+      <!-- Chat Layout Shell -->
+      <div class="chat-layout-shell">
+
+        <!-- Left Sidebar: Conversations List -->
+        <aside class="conversations-sidebar">
+          <div class="conv-sidebar-header">
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--dark);">Conversations</h2>
+            <div class="conv-search-box">
+              <input type="text" id="convSearchInput" placeholder="Search conversations..." autocomplete="off">
+            </div>
+          </div>
+
+          <div class="conversation-items-list" id="conversationItemsList">
+            <!-- Dynamically populated from data.js & messages.js -->
+          </div>
+        </aside>
+
+        <!-- Right Side: Active Chat Window -->
+        <section class="chat-window-pane">
+          <!-- Chat Contact Header -->
+          <div class="chat-header-bar">
+            <div class="chat-header-user">
+              <div class="chat-header-avatar-wrap">
+                <img id="activeChatAvatar" src="" alt="Contact avatar" class="chat-header-avatar">
+                <span class="fl-online-indicator" id="activeChatOnline"></span>
+              </div>
+              <div>
+                <h3 id="activeChatName" class="chat-header-name">Contact Name</h3>
+                <span id="activeChatRole" class="chat-header-role">Role Details</span>
+              </div>
+            </div>
+
+            <div class="chat-header-actions">
+              <a href="orders.html" class="btn btn-sm btn-outline">
+                📁 View Associated Order
+              </a>
+            </div>
+          </div>
+
+          <!-- Messages Scrollable Body -->
+          <div class="chat-messages-body" id="chatMessagesBody">
+            <!-- Bubbles dynamically rendered -->
+          </div>
+
+          <!-- Message Input Bar -->
+          <form class="chat-input-bar" id="chatInputForm">
+            <button type="button" class="chat-attachment-btn" id="attachFileBtn" title="Attach file or mockup">
+              📎
+            </button>
+            <input type="text" id="chatMessageInput" class="chat-message-input" placeholder="Type your message here... (Press Enter to Send)" autocomplete="off">
+            <button type="submit" class="btn btn-primary chat-send-btn" id="sendMsgBtn">
+              <span>Send</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="orders.html">Orders</a>
+          <a href="messages.html">Messages</a>
+          <a href="notifications.html">Notifications</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/messages.js"></script>
+</body>
+</html>

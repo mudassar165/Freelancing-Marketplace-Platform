@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Service Details - WorkSphere Freelance Marketplace">
+  <title>Service Details | WorkSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="WorkSphere Home">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path><circle cx="8" cy="12" r="2"></circle></svg>
+        </div>
+        <span>Work<span class="highlight">Sphere</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="marketplace.html?tab=freelancers" class="nav-link">Find Freelancers</a></li>
+          <li><a href="marketplace.html?tab=services" class="nav-link active">Find Jobs & Services</a></li>
+          <li><a href="profile.html" class="nav-link">My Profile</a></li>
+          <li><a href="index.html#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-open-login" type="button">Log In</button>
+        <button class="btn btn-primary btn-open-register" type="button">Join WorkSphere</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" type="button">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Service Details View -->
+  <main class="details-page-section">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="marketplace.html?tab=services">Services</a>
+        <span>/</span>
+        <span class="current" id="srvBreadcrumb">Service Details</span>
+      </div>
+
+      <div class="details-layout-grid">
+        <!-- Main Content (Left Column) -->
+        <div class="details-main-content">
+          <div class="service-category-tag" id="srvCategory">Category</div>
+          <h1 class="details-title" id="srvTitle">Service Title Loading...</h1>
+
+          <!-- Seller Quick Bar -->
+          <div class="details-seller-strip">
+            <a href="#" id="srvSellerLink" class="seller-strip-left">
+              <img id="srvSellerAvatar" src="" alt="Seller avatar" class="seller-strip-img">
+              <div>
+                <h4 id="srvSellerName" class="seller-strip-name">Seller Name</h4>
+                <span id="srvSellerLevel" class="badge badge-primary">Top Rated</span>
+              </div>
+            </a>
+            <div class="details-stats-inline">
+              <span class="star-rating">★ <strong id="srvRating">4.9</strong></span>
+              <span class="review-count">(<span id="srvReviewsCount">80</span> reviews)</span>
+              <span class="orders-queue">• 3 Orders in Queue</span>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="details-hero-image-wrap">
+            <img id="srvHeroImage" src="" alt="Service preview banner" class="details-hero-img">
+          </div>
+
+          <!-- Description Section -->
+          <div class="details-card-block">
+            <h3>About This Service</h3>
+            <p id="srvDescription" class="details-description-text">
+              Detailed service description...
+            </p>
+          </div>
+
+          <!-- Deliverables & Inclusions -->
+          <div class="details-card-block">
+            <h3>What's Included in This Package</h3>
+            <ul class="inclusions-list" id="srvFeaturesList">
+              <!-- Features populated dynamically -->
+            </ul>
+          </div>
+
+          <!-- About the Seller Card -->
+          <div class="details-card-block">
+            <h3>Meet Your Specialist</h3>
+            <div class="seller-bio-card">
+              <img id="srvBioAvatar" src="" alt="Seller avatar" class="seller-bio-img">
+              <div class="seller-bio-info">
+                <h4 id="srvBioName">Specialist Name</h4>
+                <p id="srvBioTitle" class="seller-bio-sub">Professional Title</p>
+                <p id="srvBioText" class="seller-bio-desc">Seller bio summary...</p>
+                <div class="seller-meta-tags">
+                  <span id="srvBioLocation">📍 Location</span>
+                  <span id="srvBioResponse">⚡ Response time: &lt; 2 hrs</span>
+                  <span id="srvBioLanguages">🌐 English</span>
+                </div>
+                <a href="#" id="srvViewProfileBtn" class="btn btn-outline btn-sm" style="margin-top: 1rem;">
+                  View Full Profile & Portfolio
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar / Purchase Card (Right Column) -->
+        <aside class="details-sidebar">
+          <div class="pricing-card-sticky">
+            <div class="package-header">
+              <span class="package-name">Standard Package</span>
+              <div class="package-price" id="srvPriceDisplay">$0</div>
+            </div>
+            <p class="package-summary">
+              Complete, production-ready deliverable with full source files, asset exports, and quality assurance.
+            </p>
+
+            <div class="package-delivery-row">
+              <div class="p-item">
+                <span class="p-icon">⏱️</span>
+                <span id="srvDeliveryDays">5 Days Delivery</span>
+              </div>
+              <div class="p-item">
+                <span class="p-icon">🔄</span>
+                <span>Unlimited Revisions</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="orderServiceBtn">
+              Order Service Now
+            </button>
+            <button type="button" class="btn btn-secondary btn-block" id="contactSellerBtn" style="margin-top: 0.75rem;">
+              Contact Seller
+            </button>
+
+            <div class="guarantee-note">
+              <span>🔒 100% Escrow Protection</span>
+              <p>Payment released to seller only after you review and approve the final work.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>&copy; 2026 WorkSphere Technologies Inc. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="index.html">Home</a>
+          <a href="marketplace.html">Marketplace</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/service-details.js"></script>
+</body>
+</html>
+
